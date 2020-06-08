@@ -1,0 +1,11 @@
+if {$SteelType == "Hysteretic"} {
+	set fy -
+	set fu -
+	set Es -
+	set Esh -
+	set esh -
+	set esu1 -
+	set esu2 -
+	set ey [expr $fy/$Es];
+	uniaxialMaterial Hysteretic $IDSteel $fy $ey $fu $esu1 $fu $esu2 -$fy -$ey -$fu -$esu1 -$fu -$esu2 1 1 0.0 0.0 0.0;
+};

@@ -1,0 +1,39 @@
+set AbutmentType 0
+set k1 0
+set pbw 0
+set gapL 0
+set gapV 0
+set kv 0
+if {$AbutmentType == "A1"} {
+set cfactor	0
+set CW 0
+set CL 0
+}    
+if {$AbutmentType == "AAA2"} {  
+set abutvar 0
+set D2SK 0
+set D3SK  0
+set D5SK  0
+set V2SK 0
+set V3SK 0
+set V4SK 0
+set V5SK 0
+set D6SK 0
+set s1n 0
+set e1n 0
+set s2n 0
+set e2n 0
+set s3n 0
+set e3n 0
+set s1p 0
+set e1p 0
+set s2p 0
+set e2p 0
+set s3p 0
+set e3p 0
+set pinchX 0
+set pinchY 0
+set damage1 0
+set damage2 0
+set beta 0
+}  

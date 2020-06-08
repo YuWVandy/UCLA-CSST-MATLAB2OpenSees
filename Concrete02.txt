@@ -1,0 +1,15 @@
+if {$ConcreteType == "Concrete02"} {
+    set fce -
+    set fcc -
+    set fcu -
+    set ec0 -
+    set esp -
+    set ecc -
+    set ecu -
+    set lambda -
+    set ftC [expr -0.1*$fcc]; # tensile strength +tension
+    set ftU [expr -0.1*$fce]; # tensile strength +tension
+    set Ets [expr $ftU/0.002]; # tension softening stiffness
+    uniaxialMaterial Concrete02 $IDconcCore  $fcc $ecc $fcu $ecu $lambda $ftC $Ets;	# Core concrete (confined)
+    uniaxialMaterial Concrete02 $IDconcCover $fce $ec0 0.00 $esp $lambda $ftU $Ets;	# Cover concrete (unconfined)
+};

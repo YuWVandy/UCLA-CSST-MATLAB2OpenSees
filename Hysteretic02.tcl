@@ -1,0 +1,39 @@
+if {$ConcreteType == "Hysteretic02"} {
+    set fce   -5.00
+    set fcc   -6.5
+    set fcu   -6.00
+    set ec0   -0.0028
+    set esp   -0.005
+    set ecc   -0.0036
+    set ecu   -0.025
+    set fc1C   $fcc; # CONFINED concrete
+    set eps1C  $ecc; # Strain at maximum stress 
+    set fc2C   $fcu; # Ultimate stress
+    set eps2C  $ecu; # Strain at ultimate stress 
+    set fc1U  $fce;	# UNCONFINED concrete
+    set eps1U $ec0;	# Strain at maximum strength of unconfined concrete
+    set fc2U    0.00
+    set eps2U $esp;	# Strain at ultimate stress
+    set lambda   0.1
+    set ftC [expr -0.1*$fcc]; # tensile strength +tension
+    set ftU [expr -0.1*$fce]; # tensile strength +tension
+    set Ets [expr $ftU/0.002]; # tension softening stiffness
+	set fc0C [expr 0.7*$fcc];
+	set eps0C [expr $fc0C/(2.*$fcc/$ecc)];
+	set fc0U [expr 0.7*$fce];
+	set eps0U [expr $fc0U/(2.*$fce/$ec0)];
+	set ft1C $ftC;
+	set epst1C [expr $ft1C/(2.*$fcc/$ecc)];
+	set ft2C   0.00
+	set epst2C [expr $ft1C/$Ets+$epst1C];
+	set ft1U $ftU;
+	set epst1U [expr $ft1U/(2.*$fce/$ec0)];
+	set ft2U   0.00
+	set epst2U [expr $ft1U/$Ets+$epst1U];
+	set ft0C [expr 0.75*$ft1C];
+	set epst0C [expr $ft0C/(2.*$fcc/$ecc)];
+	set ft0U [expr 0.75*$ft1U];
+	set epst0U [expr $ft0U/(2.*$fce/$ec0)];
+    uniaxialMaterial Hysteretic $IDconcCore  $ft0C $epst0C $ft1C $epst1C $ft2C $epst2C $fc0C $eps0C $fc1C $eps1C $fc2C $eps2C 1 1 0.0 0.0 0.0;
+    uniaxialMaterial Hysteretic $IDconcCover $ft0U $epst0U $ft1U $epst1U $ft2U $epst2U $fc0U $eps0U $fc1U $eps1U $fc2U $eps2U 1 1 0.0 0.0 0.0;
+};

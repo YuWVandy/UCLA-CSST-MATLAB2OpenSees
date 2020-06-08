@@ -1,0 +1,9 @@
+if {$SteelType == "ReinforcingSteel"} {
+    set fy -
+    set fu -
+    set Es -
+    set Esh	-
+    set esh -
+    set esu -
+    uniaxialMaterial ReinforcingSteel $IDSteel $fy $fu $Es $Esh $esh $esu; 
+};

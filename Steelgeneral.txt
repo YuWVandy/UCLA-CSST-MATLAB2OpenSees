@@ -1,0 +1,4 @@
+set Es -
+set Us -
+set Gs [expr $Es/(2*(1+$Us))]; # Shear Modulus of Elasticity
+set fy -

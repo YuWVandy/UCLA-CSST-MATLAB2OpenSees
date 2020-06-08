@@ -1,0 +1,11 @@
+if {$ConcreteType == "Concrete01"} {
+    set fce -
+    set fcc -
+    set fcu -
+    set ec0 -
+    set esp -
+    set ecc -
+    set ecu -
+    uniaxialMaterial Concrete01 $IDconcCore  $fcc $ecc $fcu $ecu; # column core-concrete
+    uniaxialMaterial Concrete01 $IDconcCover $fce $ec0 0.00 $esp; # column cover-concrete
+};

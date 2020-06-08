@@ -1,0 +1,3 @@
+set ConcreteType Concrete01
+set SteelType Steel02
+set ColElementType nonlinearBeamColumn

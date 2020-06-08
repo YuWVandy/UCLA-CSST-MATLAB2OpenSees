@@ -1,0 +1,8 @@
+if {$SteelType == "Steel02"} {
+    set Fy $fy; # STEEL yield stress
+    set Bs -
+    set R0 -
+    set cR1 -
+    set cR2 -
+    uniaxialMaterial Steel02 $IDSteel $Fy $Es $Bs $R0 $cR1 $cR2;
+};
